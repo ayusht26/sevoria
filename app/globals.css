@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Sevoria Geist Dark Mode Tokens */
+  --canvas: #000000;
+  --canvas-elevated: #0a0a0a;
+  --hairline-soft: #111111;
+  --ink: #ededed;
+  --body: #a1a1a1;
+  --mute: #888888;
+  --faint: #666666;
+  --hairline: #333333;
+  --link: #0070f3;
+  --link-deep: #3291ff;
+  --link-soft: rgba(0, 112, 243, 0.1);
+  --violet: #7928ca;
+  --cyan: #50e3c2;
+  --error: #ee0000;
+  --warning: #f5a623;
+
+  /* Hero mesh gradient stops */
+  --gradient-blob-1: #0070f3;
+  --gradient-blob-2: #7928ca;
+  --gradient-blob-3: #50e3c2;
+
+  /* Shadcn UI Dark Overrides */
+  --background: #000000;
+  --foreground: #ededed;
+  --card: #0a0a0a;
+  --card-foreground: #ededed;
+  --popover: #0a0a0a;
+  --popover-foreground: #ededed;
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #111111;
+  --secondary-foreground: #ededed;
+  --muted: #111111;
+  --muted-foreground: #888888;
+  --accent: #111111;
+  --accent-foreground: #ededed;
+  --destructive: #ee0000;
+  --destructive-foreground: #ffffff;
+  --border: #333333;
+  --input: #333333;
+  --ring: #0070f3;
+  --radius: 0.75rem;
+
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #ededed;
+  --sidebar-primary: #0070f3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #111111;
+  --sidebar-accent-foreground: #ededed;
+  --sidebar-border: #333333;
+  --sidebar-ring: #0070f3;
+}
+
+@theme {
+  --color-canvas: var(--canvas);
+  --color-canvas-elevated: var(--canvas-elevated);
+  --color-hairline-soft: var(--hairline-soft);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-mute: var(--mute);
+  --color-faint: var(--faint);
+  --color-hairline: var(--hairline);
+  --color-link: var(--link);
+  --color-link-deep: var(--link-deep);
+  --color-violet: var(--violet);
+  --color-cyan: var(--cyan);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+}
+
+@layer base {
+  * {
+    border-color: var(--hairline);
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: var(--canvas);
+    color: var(--ink);
+  }
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans), Inter, system-ui, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+  }
+}
+
+/* Typography Utility Classes matching §2.2 */
+.display-xl {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -2.4px;
+}
+
+.heading-lg {
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -1.28px;
+}
+
+.heading-md {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  letter-spacing: -0.4px;
+}
+
+.label-sm {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: -0.28px;
+}
+
+.mono-eyebrow {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.body-lg {
+  font-size: clamp(1rem, 1vw + 0.8rem, 1.125rem);
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+
+.body-md {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.body-sm {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+.button-lg {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.button-md {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
