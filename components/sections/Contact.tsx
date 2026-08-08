@@ -10,6 +10,7 @@ import { BUSINESS_INFO } from "@/lib/business-info"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { MagicCard } from "@/components/ui/magic-card"
 import { MapPin, Phone, Mail, CheckCircle, Send } from "lucide-react"
 
 // Form validation schema with Zod
@@ -136,7 +137,7 @@ export function Contact() {
             </div>
 
             {/* Embedded Google Maps Container */}
-            <div className="rounded-xl border border-hairline bg-canvas-elevated p-3 flex flex-col gap-3 overflow-hidden">
+            <MagicCard className="p-3 flex flex-col gap-3 overflow-hidden">
               <div className="relative w-full h-[220px] rounded-lg overflow-hidden border border-hairline-soft">
                 <iframe
                   title="SEVIORA PHARMA PRIVATE LIMITED Google Maps Location"
@@ -164,7 +165,7 @@ export function Contact() {
                   <Send className="h-3 w-3" />
                 </a>
               </div>
-            </div>
+            </MagicCard>
           </motion.div>
 
           {/* Right Column: Interactive Contact Form */}
@@ -173,8 +174,9 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-7 rounded-xl border border-hairline bg-canvas-elevated p-8"
+            className="lg:col-span-7"
           >
+            <MagicCard className="p-8">
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center text-center gap-4 py-12">
                 <div className="h-16 w-16 rounded-full bg-link/10 border border-link flex items-center justify-center text-link">
@@ -297,6 +299,7 @@ export function Contact() {
                 </Button>
               </form>
             )}
+            </MagicCard>
           </motion.div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { MagicCard } from "@/components/ui/magic-card"
 
 const PROCESS_STEPS = [
   {
@@ -52,22 +53,27 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative flex flex-col gap-4 p-6 rounded-xl bg-canvas-elevated border border-hairline hover:border-mute transition-colors group pl-7 border-l-2 border-l-link"
             >
-              {/* Geist Mono Large Step Number */}
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-2xl md:text-3xl font-semibold text-mute group-hover:text-link transition-colors">
-                  {step.number}
-                </span>
-                <span className="h-2 w-2 rounded-full bg-link/60 group-hover:bg-link group-hover:scale-125 transition-all" />
-              </div>
+              <MagicCard
+                gradientFrom="#0070f3"
+                gradientTo="#50e3c2"
+                className="relative flex flex-col gap-4 p-6 group pl-7 border-l-2 border-l-link h-full"
+              >
+                {/* Geist Mono Large Step Number */}
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-2xl md:text-3xl font-semibold text-mute group-hover:text-link transition-colors">
+                    {step.number}
+                  </span>
+                  <span className="h-2 w-2 rounded-full bg-link/60 group-hover:bg-link group-hover:scale-125 transition-all" />
+                </div>
 
-              <h3 className="heading-md text-ink group-hover:text-white transition-colors">
-                {step.title}
-              </h3>
-              <p className="body-md text-body leading-relaxed">
-                {step.description}
-              </p>
+                <h3 className="heading-md text-ink group-hover:text-white transition-colors">
+                  {step.title}
+                </h3>
+                <p className="body-md text-body leading-relaxed">
+                  {step.description}
+                </p>
+              </MagicCard>
             </motion.div>
           ))}
         </div>

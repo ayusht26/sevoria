@@ -1,17 +1,15 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
+import { MagicCard, MagicCardProps } from "@/components/ui/magic-card"
 
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  React.HTMLAttributes<HTMLDivElement> & Partial<MagicCardProps>
 >(({ className, ...props }, ref) => (
-  <div
+  <MagicCard
     ref={ref}
-    className={cn(
-      "rounded-xl border border-hairline bg-canvas-elevated text-ink transition-colors duration-300 hover:border-mute",
-      className
-    )}
+    className={cn("text-ink", className)}
     {...props}
   />
 ))

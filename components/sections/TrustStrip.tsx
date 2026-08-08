@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { MagicCard } from "@/components/ui/magic-card"
 import {
   ApolloLogo,
   FortisLogo,
@@ -36,35 +37,20 @@ export function TrustStrip() {
         </motion.span>
       </div>
 
-      {/* Hospital Logos Horizontal Marquee with reduced speed (140s) & dual track for seamless loop */}
+      {/* Hospital Logos Horizontal Marquee with slow smooth single-container animation */}
       <div className="relative mt-6 flex w-full flex-col items-center justify-center overflow-hidden">
-        <div className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row [--duration:140s] w-full">
+        <div className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row [--duration:90s] w-full">
           <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-            {[...Array(2)].map((_, setIndex) =>
+            {[...Array(4)].map((_, setIndex) =>
               HOSPITAL_LOGOS.map((item, i) => {
                 const LogoComp = item.component
                 return (
-                  <div
-                    key={`track1-${setIndex}-${i}`}
-                    className="px-8 py-3.5 rounded-xl bg-canvas-elevated/90 border border-hairline-soft text-body hover:text-ink hover:border-hairline transition-all duration-300 shrink-0 flex items-center justify-center h-14 w-[200px] sm:w-[220px]"
+                  <MagicCard
+                    key={`${setIndex}-${i}`}
+                    className="px-8 py-3.5 shrink-0 flex items-center justify-center h-14 w-[200px] sm:w-[220px]"
                   >
                     <LogoComp className="h-7 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                  </div>
-                )
-              })
-            )}
-          </div>
-          <div aria-hidden="true" className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
-            {[...Array(2)].map((_, setIndex) =>
-              HOSPITAL_LOGOS.map((item, i) => {
-                const LogoComp = item.component
-                return (
-                  <div
-                    key={`track2-${setIndex}-${i}`}
-                    className="px-8 py-3.5 rounded-xl bg-canvas-elevated/90 border border-hairline-soft text-body hover:text-ink hover:border-hairline transition-all duration-300 shrink-0 flex items-center justify-center h-14 w-[200px] sm:w-[220px]"
-                  >
-                    <LogoComp className="h-7 w-auto opacity-70 hover:opacity-100 transition-opacity" />
-                  </div>
+                  </MagicCard>
                 )
               })
             )}

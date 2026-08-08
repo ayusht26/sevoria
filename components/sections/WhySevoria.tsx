@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Pill, ShieldCheck, MapPin, PackageCheck } from "lucide-react"
+import { MagicCard } from "@/components/ui/magic-card"
 
 const DIFFERENTIATORS = [
   {
@@ -55,17 +56,22 @@ export function WhySevoria() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-start gap-5 p-6 rounded-xl bg-canvas border border-hairline hover:border-mute transition-colors"
               >
-                <div className="h-12 w-12 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-cyan shrink-0">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="heading-md text-ink">{diff.title}</h3>
-                  <p className="body-md text-body leading-relaxed">
-                    {diff.description}
-                  </p>
-                </div>
+                <MagicCard
+                  gradientFrom="#50e3c2"
+                  gradientTo="#0070f3"
+                  className="flex items-start gap-5 p-6 h-full"
+                >
+                  <div className="h-12 w-12 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-cyan shrink-0">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <h3 className="heading-md text-ink">{diff.title}</h3>
+                    <p className="body-md text-body leading-relaxed">
+                      {diff.description}
+                    </p>
+                  </div>
+                </MagicCard>
               </motion.div>
             )
           })}

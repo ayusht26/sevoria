@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { MagicCard } from "@/components/ui/magic-card"
 import { Card, CardContent } from "@/components/ui/card"
 import { BUSINESS_INFO } from "@/lib/business-info"
 import { CheckCircle2, UserCheck } from "lucide-react"
@@ -36,9 +37,9 @@ export function About() {
             <p>
               <strong className="text-ink font-semibold">{BUSINESS_INFO.companyName}</strong> is an MCA-registered business entity based in Lucknow, Uttar Pradesh.
             </p>
-            <p className="text-ink/90 bg-canvas-elevated p-4 rounded-lg border border-hairline leading-relaxed">
+            <MagicCard className="p-4 leading-relaxed font-normal text-ink/90">
               &ldquo;As per MCA records <strong className="text-ink">{BUSINESS_INFO.companyName}</strong> is involved in activities such as Retail sale of pharmaceuticals, medical and orthopaedic goods and toilet articles.&rdquo;
-            </p>
+            </MagicCard>
             <p>
               Under the leadership of <strong className="text-ink font-semibold">{BUSINESS_INFO.owner}</strong>, Seviora Pharma Private Limited serves healthcare practitioners, medical facilities, and retail customers with authentic pharmaceutical products, specialized orthopaedic aids, and personal hygiene essentials.
             </p>

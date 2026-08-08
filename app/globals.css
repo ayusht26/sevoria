@@ -171,10 +171,10 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% - var(--gap, 1rem)));
+    transform: translateX(calc(-50% - var(--gap, 1rem) / 2));
   }
 }
 
 .animate-marquee {
-  animation: marquee var(--duration, 40s) linear infinite;
+  animation: marquee var(--duration, 90s) linear infinite;
 }

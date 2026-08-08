@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { MagicCard } from "@/components/ui/magic-card"
 
 export interface TestimonialAuthor {
   name: string
@@ -15,13 +16,10 @@ export interface TestimonialCardProps {
 
 export function TestimonialCard({ author, text, className }: TestimonialCardProps) {
   return (
-    <div
+    <MagicCard
       className={cn(
-        "flex flex-col rounded-xl border border-hairline",
-        "bg-canvas-elevated",
-        "p-6 text-start",
+        "flex flex-col text-start p-6",
         "w-[320px] sm:w-[360px] shrink-0 select-none",
-        "transition-colors duration-300 hover:border-mute",
         className
       )}
     >
@@ -39,6 +37,6 @@ export function TestimonialCard({ author, text, className }: TestimonialCardProp
         </div>
       </div>
       <p className="mt-4 text-sm text-body leading-relaxed">{text}</p>
-    </div>
+    </MagicCard>
   )
 }
