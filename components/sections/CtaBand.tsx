@@ -21,12 +21,12 @@ export function CtaBand() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center gap-4"
         >
-          <span className="mono-eyebrow text-cyan">TAKE THE NEXT STEP</span>
+          <span className="mono-eyebrow text-cyan">GET IN TOUCH WITH US</span>
           <h2 className="heading-lg text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-ink max-w-[800px]">
-            Ready to grow your practice?
+            Need Pharmaceutical or Medical Supplies?
           </h2>
-          <p className="body-lg text-body max-w-[600px] leading-relaxed">
-            Schedule a 30-minute strategic consultation with Satyendra Tiwari to audit your clinic’s growth potential.
+          <p className="body-lg text-body max-w-[650px] leading-relaxed">
+            Contact SEVIORA PHARMA PRIVATE LIMITED in Ashiyana, Lucknow for authentic pharmaceuticals, orthopaedic goods, and toilet articles.
           </p>
         </motion.div>
 
@@ -44,7 +44,7 @@ export function CtaBand() {
             className="w-full sm:w-auto gap-2 group"
           >
             <a href="#contact">
-              Book a Free Strategy Call
+              Send Product Inquiry
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
           </Button>

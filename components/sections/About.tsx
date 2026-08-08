@@ -17,9 +17,9 @@ export function About() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-start gap-3"
         >
-          <span className="mono-eyebrow">ABOUT SEVORIA</span>
+          <span className="mono-eyebrow">ABOUT SEVIORA PHARMA</span>
           <h2 className="heading-lg max-w-[720px] text-ink">
-            Built for medicine. Nothing else.
+            Registered MCA enterprise for medical & pharmaceutical goods.
           </h2>
         </motion.div>
 
@@ -34,29 +34,32 @@ export function About() {
             className="lg:col-span-7 flex flex-col gap-6 body-lg text-body"
           >
             <p>
-              Founded by <strong className="text-ink font-semibold">{BUSINESS_INFO.owner}</strong> in Lucknow, <strong className="text-ink font-semibold">{BUSINESS_INFO.brandName}</strong> was born out of a stark realization: generalist marketing agencies consistently fail medical professionals because they treat a doctor’s clinic like an e-commerce store.
+              <strong className="text-ink font-semibold">{BUSINESS_INFO.companyName}</strong> is an MCA-registered business entity based in Lucknow, Uttar Pradesh.
+            </p>
+            <p className="text-ink/90 bg-canvas-elevated p-4 rounded-lg border border-hairline leading-relaxed">
+              &ldquo;As per MCA records <strong className="text-ink">{BUSINESS_INFO.companyName}</strong> is involved in activities such as Retail sale of pharmaceuticals, medical and orthopaedic goods and toilet articles.&rdquo;
             </p>
             <p>
-              Medical growth requires a deep respect for medical compliance, patient psychology, and local community authority. We don't sell gimmicks or vanity metrics. We engineer high-converting patient pipelines, build unbreakable local search dominance, and elevate doctor branding across Lucknow and North India.
+              Under the leadership of <strong className="text-ink font-semibold">{BUSINESS_INFO.owner}</strong>, Seviora Pharma Private Limited serves healthcare practitioners, medical facilities, and retail customers with authentic pharmaceutical products, specialized orthopaedic aids, and personal hygiene essentials.
             </p>
 
             <ul className="flex flex-col gap-3 pt-2 text-sm text-ink font-medium">
               <li className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-link shrink-0" />
-                <span>100% Medical & Healthcare Vertical Focus</span>
+                <span>Retail Sale of Pharmaceuticals & Prescription Medicines</span>
               </li>
               <li className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-link shrink-0" />
-                <span>Strict Compliance with Medical Council Advertising Guidelines</span>
+                <span>Medical & Orthopaedic Goods Supply</span>
               </li>
               <li className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-link shrink-0" />
-                <span>Deep Local Understanding of Uttar Pradesh Patient Dynamics</span>
+                <span>Toilet Articles & Personal Care Hygiene Products</span>
               </li>
             </ul>
           </motion.div>
 
-          {/* Right Column: Founder & Philosophy Card */}
+          {/* Right Column: Company & Director Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -74,22 +77,28 @@ export function About() {
                     <UserCheck className="h-7 w-7" />
                   </div>
                   <div>
-                    <h3 className="heading-md text-ink">{BUSINESS_INFO.owner}</h3>
+                    <h3 className="heading-md text-ink">{BUSINESS_INFO.companyName}</h3>
                     <p className="text-xs text-mute font-mono uppercase tracking-wider mt-0.5">
-                      Founder & Managing Director
+                      {BUSINESS_INFO.owner} • Director
                     </p>
                   </div>
                 </div>
 
                 <div className="border-t border-hairline pt-6">
                   <p className="text-sm text-body italic leading-relaxed">
-                    &ldquo;In healthcare marketing, trust precedes conversion. If a patient doesn’t feel absolute confidence in your clinical authority within 3 seconds, no ad budget in the world will save your campaign.&rdquo;
+                    &ldquo;We are committed to delivering verified, high-grade pharmaceutical products, orthopaedic equipment, and hygiene essentials with absolute integrity and reliability.&rdquo;
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-mute font-mono border-t border-hairline-soft pt-4">
-                  <span>LOCATION</span>
-                  <span className="text-ink">{BUSINESS_INFO.shortAddress}</span>
+                <div className="flex flex-col gap-2 border-t border-hairline-soft pt-4 text-xs font-mono text-mute">
+                  <div className="flex items-center justify-between">
+                    <span>MCA REGISTRATION</span>
+                    <span className="text-ink font-semibold">Lucknow, UP</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span>LOCATION</span>
+                    <span className="text-ink">{BUSINESS_INFO.shortAddress}</span>
+                  </div>
                 </div>
               </CardContent>
             </Card>

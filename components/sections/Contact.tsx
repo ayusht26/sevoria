@@ -66,13 +66,13 @@ export function Contact() {
         >
           <span className="mono-eyebrow">GET IN TOUCH</span>
           <h2 className="heading-lg max-w-[720px] text-ink">
-            Start growing your medical practice today.
+            Connect with SEVIORA PHARMA PRIVATE LIMITED.
           </h2>
         </motion.div>
 
         {/* Split Layout (2 Columns) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Column: Details & Map Placeholder */}
+          {/* Left Column: Details & Google Maps Embed */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export function Contact() {
             className="lg:col-span-5 flex flex-col justify-between gap-8"
           >
             <div className="flex flex-col gap-6">
-              <h3 className="heading-md text-ink">Contact Details</h3>
+              <h3 className="heading-md text-ink">Contact & Office Location</h3>
 
               <div className="flex flex-col gap-5">
                 <div className="flex items-start gap-4">
@@ -90,9 +90,12 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="text-xs text-mute font-mono uppercase tracking-wider">
-                      Office Address
+                      Registered Office Address
                     </h4>
                     <p className="body-md text-ink mt-0.5">{BUSINESS_INFO.address}</p>
+                    <p className="text-xs text-mute mt-1 font-mono">
+                      (Google Maps listing: Satya Distributors)
+                    </p>
                   </div>
                 </div>
 
@@ -102,11 +105,11 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="text-xs text-mute font-mono uppercase tracking-wider">
-                      Direct Line
+                      Mobile & Direct Line
                     </h4>
                     <a
                       href={`tel:${BUSINESS_INFO.phone}`}
-                      className="body-md text-ink hover:text-link transition-colors mt-0.5 block"
+                      className="body-md text-ink hover:text-link transition-colors mt-0.5 block font-semibold"
                     >
                       {BUSINESS_INFO.formattedPhone}
                     </a>
@@ -132,17 +135,35 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Map Embed Placeholder Card */}
-            {/* PLACEHOLDER: Embed Google Maps iframe or interactive map for XYZ, Ashiyana, Lucknow */}
-            <div className="rounded-xl border border-hairline bg-canvas-elevated p-6 flex flex-col items-center justify-center gap-3 text-center min-h-[180px]">
-              <MapPin className="h-8 w-8 text-mute animate-bounce" />
-              <p className="text-sm text-body font-medium">
-                XYZ, Ashiyana, Lucknow, UP
-              </p>
-              <span className="text-xs text-mute font-mono">
-                {/* PLACEHOLDER: Embed live Google Maps iframe here */}
-                [ Interactive Map Embed Placeholder ]
-              </span>
+            {/* Embedded Google Maps Container */}
+            <div className="rounded-xl border border-hairline bg-canvas-elevated p-3 flex flex-col gap-3 overflow-hidden">
+              <div className="relative w-full h-[220px] rounded-lg overflow-hidden border border-hairline-soft">
+                <iframe
+                  title="SEVIORA PHARMA PRIVATE LIMITED Google Maps Location"
+                  src={BUSINESS_INFO.googleMapsEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-between px-1">
+                <span className="text-xs text-mute font-mono truncate max-w-[200px]">
+                  Ashiyana, Lucknow
+                </span>
+                <a
+                  href={BUSINESS_INFO.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-link hover:underline font-medium"
+                >
+                  <span>Open in Google Maps</span>
+                  <Send className="h-3 w-3" />
+                </a>
+              </div>
             </div>
           </motion.div>
 
@@ -161,7 +182,7 @@ export function Contact() {
                 </div>
                 <h3 className="heading-md text-ink">Inquiry Received</h3>
                 <p className="body-md text-body max-w-[400px]">
-                  Thank you. Satyendra Tiwari or a senior Sevoria strategist will contact you within 24 hours.
+                  Thank you. Satyendra Tiwari or a representative from SEVIORA PHARMA PRIVATE LIMITED will get back to you shortly.
                 </p>
                 <Button
                   variant="secondaryPill"
@@ -181,7 +202,7 @@ export function Contact() {
                       Full Name *
                     </label>
                     <Input
-                      placeholder="Dr. Rajesh Kumar"
+                      placeholder="Satyendra Tiwari"
                       {...register("name")}
                       aria-invalid={!!errors.name}
                     />
@@ -197,7 +218,7 @@ export function Contact() {
                     </label>
                     <Input
                       type="email"
-                      placeholder="doctor@clinic.com"
+                      placeholder="contact@pharmacy.com"
                       {...register("email")}
                       aria-invalid={!!errors.email}
                     />
@@ -215,7 +236,7 @@ export function Contact() {
                     </label>
                     <Input
                       type="tel"
-                      placeholder="9876543210"
+                      placeholder="9452948453"
                       {...register("phone")}
                       aria-invalid={!!errors.phone}
                     />
@@ -224,13 +245,13 @@ export function Contact() {
                     )}
                   </div>
 
-                  {/* Clinic Name */}
+                  {/* Clinic / Business Name */}
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-mono uppercase text-mute">
-                      Clinic / Practice Name *
+                      Organization / Practice Name *
                     </label>
                     <Input
-                      placeholder="Lucknow Care Clinic"
+                      placeholder="Clinic / Hospital / Retailer"
                       {...register("clinicName")}
                       aria-invalid={!!errors.clinicName}
                     />
@@ -245,10 +266,10 @@ export function Contact() {
                 {/* Message */}
                 <div className="flex flex-col gap-2">
                   <label className="text-xs font-mono uppercase text-mute">
-                    How can we help your practice? *
+                    Inquiry Details *
                   </label>
                   <Textarea
-                    placeholder="Tell us about your clinic, specialty, and current patient acquisition goals..."
+                    placeholder="Specify requirements for pharmaceuticals, orthopaedic goods, or toilet articles..."
                     {...register("message")}
                     aria-invalid={!!errors.message}
                   />
@@ -269,7 +290,7 @@ export function Contact() {
                     "Sending..."
                   ) : (
                     <>
-                      <span>Submit Strategy Request</span>
+                      <span>Send Product Inquiry</span>
                       <Send className="h-4 w-4" />
                     </>
                   )}

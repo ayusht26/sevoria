@@ -40,20 +40,18 @@ export function Hero() {
         <div className="hero-animate-item hero-eyebrow inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-hairline bg-canvas-elevated/80 backdrop-blur-sm opacity-0">
           <span className="w-2 h-2 rounded-full bg-cyan animate-pulse" />
           <span className="mono-eyebrow text-[11px] sm:text-xs">
-            MEDICAL GROWTH MARKETING · LUCKNOW
+            SEVIORA PHARMA PRIVATE LIMITED · LUCKNOW
           </span>
         </div>
 
         {/* Main Headline */}
-        {/* ALTERNATE HEADLINE 1: "Growth Marketing, Built for Medicine." */}
-        {/* ALTERNATE HEADLINE 2: "Precision Marketing for Medical Practices." */}
         <h1 className="hero-animate-item hero-headline display-xl text-ink max-w-[900px] opacity-0 font-semibold tracking-tight">
-          Marketing That Doctors <span className="text-white">Actually Trust.</span>
+          Retail Sale of Pharmaceuticals & <span className="text-white">Medical Goods.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="hero-animate-item hero-subheadline body-lg text-body max-w-[680px] opacity-0 leading-relaxed">
-          Sevoria equips medical practices, clinics, and hospitals in Lucknow and across UP with compliant, high-performing patient acquisition campaigns and authoritative branding.
+        <p className="hero-animate-item hero-subheadline body-lg text-body max-w-[720px] opacity-0 leading-relaxed">
+          As per MCA records, SEVIORA PHARMA PRIVATE LIMITED is involved in activities such as Retail sale of pharmaceuticals, medical and orthopaedic goods and toilet articles.
         </p>
 
         {/* CTA Buttons */}
@@ -66,7 +64,7 @@ export function Hero() {
               className="w-full sm:w-auto gap-2 group"
             >
               <a href="#contact">
-                Book a Free Strategy Call
+                Contact Us
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
             </Button>
@@ -79,43 +77,42 @@ export function Hero() {
               asChild
               className="w-full sm:w-auto"
             >
-              <a href="#services">See Our Work</a>
+              <a href="#services">Explore Activities</a>
             </Button>
           </div>
         </div>
       </div>
 
       {/* Hero Bottom Stat Strip (Below Fold) */}
-      {/* PLACEHOLDER: Replace illustrative stats below with real client metrics once provided by Satyendra */}
       <div className="hero-animate-item hero-stats relative z-10 mx-auto w-full max-w-[1200px] pt-12 border-t border-hairline-soft opacity-0 mt-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-hairline-soft">
           <div className="flex flex-col items-center justify-center p-3">
             <div className="flex items-center gap-2 text-link mb-1">
-              <Users className="h-4 w-4" />
-              <span className="text-xl sm:text-2xl font-semibold text-ink">50+</span>
+              <ShieldCheck className="h-4 w-4" />
+              <span className="text-xl sm:text-2xl font-semibold text-ink">MCA Registered</span>
             </div>
             <p className="text-xs text-mute font-mono uppercase tracking-wider">
-              Clinics & Hospitals Grown
+              SEVIORA PHARMA PRIVATE LIMITED
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center p-3">
             <div className="flex items-center gap-2 text-cyan mb-1">
               <TrendingUp className="h-4 w-4" />
-              <span className="text-xl sm:text-2xl font-semibold text-ink">3.2x</span>
+              <span className="text-xl sm:text-2xl font-semibold text-ink">Pharma & Orthopaedic</span>
             </div>
             <p className="text-xs text-mute font-mono uppercase tracking-wider">
-              Avg. Patient Inquiry Increase
+              Medical Supplies & Toilet Articles
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-center p-3">
             <div className="flex items-center gap-2 text-violet mb-1">
-              <ShieldCheck className="h-4 w-4" />
-              <span className="text-xl sm:text-2xl font-semibold text-ink">100%</span>
+              <Users className="h-4 w-4" />
+              <span className="text-xl sm:text-2xl font-semibold text-ink">Lucknow, UP</span>
             </div>
             <p className="text-xs text-mute font-mono uppercase tracking-wider">
-              Compliance-Approved Ads
+              Ashiyana Distribution Hub
             </p>
           </div>
         </div>

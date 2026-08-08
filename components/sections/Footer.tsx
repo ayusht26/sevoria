@@ -8,14 +8,14 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Column 1: Brand & Tagline */}
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <span className="text-2xl font-semibold tracking-tight text-ink">
-              {BUSINESS_INFO.brandName}
+            <span className="text-xl font-semibold tracking-tight text-ink">
+              {BUSINESS_INFO.companyName}
             </span>
             <p className="body-md text-body leading-relaxed max-w-sm">
-              {BUSINESS_INFO.tagline}
+              {BUSINESS_INFO.mcaText}
             </p>
             <p className="text-xs text-mute font-mono uppercase tracking-wider mt-2">
-              LUCKNOW • UTTAR PRADESH • INDIA
+              SECTOR J, ASHIYANA • LUCKNOW • UP 226012
             </p>
           </div>
 
@@ -30,22 +30,22 @@ export function Footer() {
               </li>
               <li>
                 <a href="#services" className="hover:text-ink transition-colors">
-                  Our Services
+                  Business Activities
                 </a>
               </li>
               <li>
                 <a href="#why-us" className="hover:text-ink transition-colors">
-                  Why Sevoria
+                  Why Sevoria Pharma
                 </a>
               </li>
               <li>
                 <a href="#process" className="hover:text-ink transition-colors">
-                  Process
+                  Our Process
                 </a>
               </li>
               <li>
                 <a href="#testimonials" className="hover:text-ink transition-colors">
-                  Results & Testimonials
+                  Client Feedback
                 </a>
               </li>
             </ul>
@@ -53,13 +53,13 @@ export function Footer() {
 
           {/* Column 3: Medical Services */}
           <div className="lg:col-span-3 flex flex-col gap-4">
-            <h4 className="mono-eyebrow text-ink">SPECIALTIES</h4>
+            <h4 className="mono-eyebrow text-ink">ACTIVITIES</h4>
             <ul className="flex flex-col gap-2.5 body-md text-body">
-              <li>Patient Acquisition</li>
-              <li>Doctor & Clinic Branding</li>
-              <li>Medical SEO & Local Search</li>
-              <li>Healthcare Google & Meta Ads</li>
-              <li>Reputation & Review Growth</li>
+              <li>Pharmaceuticals Retail</li>
+              <li>Medical & Surgical Goods</li>
+              <li>Orthopaedic Supplies</li>
+              <li>Toilet Articles & Hygiene</li>
+              <li>Local Order Delivery</li>
             </ul>
           </div>
 
@@ -70,7 +70,7 @@ export function Footer() {
               <p className="text-ink font-medium">{BUSINESS_INFO.owner}</p>
               <a
                 href={`tel:${BUSINESS_INFO.phone}`}
-                className="hover:text-ink transition-colors"
+                className="hover:text-ink transition-colors font-semibold"
               >
                 {BUSINESS_INFO.formattedPhone}
               </a>
@@ -86,9 +86,9 @@ export function Footer() {
 
         {/* Footer Bottom Strip */}
         <div className="border-t border-hairline pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-mute">
-          <p>© {new Date().getFullYear()} {BUSINESS_INFO.brandName}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {BUSINESS_INFO.companyName}. All rights reserved.</p>
           <p className="font-mono">
-            Vercel Geist Dark Theme • Ashiyana, Lucknow
+            Ashiyana, Lucknow, Uttar Pradesh 226012
           </p>
         </div>
       </div>

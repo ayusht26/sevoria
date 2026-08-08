@@ -1,28 +1,28 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { HeartPulse, ShieldCheck, MapPin, FileBarChart } from "lucide-react"
+import { Pill, ShieldCheck, MapPin, PackageCheck } from "lucide-react"
 
 const DIFFERENTIATORS = [
   {
-    icon: HeartPulse,
-    title: "Healthcare-Only Focus",
-    description: "We don't do e-commerce, real estate, or crypto. We live and breathe medical marketing 100% of the time.",
+    icon: Pill,
+    title: "100% Genuine Pharmaceuticals",
+    description: "Sourced strictly from certified distributors and manufacturers, guaranteeing complete authenticity for all medicines and health goods.",
   },
   {
     icon: ShieldCheck,
-    title: "Compliance-Aware Campaigns",
-    description: "Built to honor medical council guidelines, patient privacy, and platform advertising restrictions without risk.",
+    title: "MCA Registered Entity",
+    description: "Operated as SEVIORA PHARMA PRIVATE LIMITED with complete legal compliance and adherence to Indian regulatory standards.",
   },
   {
     icon: MapPin,
-    title: "Local Lucknow Presence, Pan-India Delivery",
-    description: "On-the-ground understanding of North Indian healthcare markets paired with nationwide digital execution.",
+    title: "Prime Ashiyana Location",
+    description: "Strategically located at Shop No 3, Ambika Vihar, Sector J, Ashiyana, Lucknow for convenient access and prompt local fulfillment.",
   },
   {
-    icon: FileBarChart,
-    title: "Transparent Reporting",
-    description: "No vanity impressions or confusing jargon. Clear dashboards tracking booked consults and ROI.",
+    icon: PackageCheck,
+    title: "Comprehensive Inventory",
+    description: "One-stop availability for pharmaceuticals, medical & orthopaedic goods, and personal toilet articles under one roof.",
   },
 ]
 
@@ -38,9 +38,9 @@ export function WhySevoria() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-start gap-3"
         >
-          <span className="mono-eyebrow text-mute">THE SEVORIA DIFFERENCE</span>
+          <span className="mono-eyebrow text-mute">WHY SEVIORA PHARMA</span>
           <h2 className="heading-lg max-w-[720px] text-ink">
-            Why leading medical practitioners partner with us.
+            Why clinics and customers rely on SEVIORA PHARMA PRIVATE LIMITED.
           </h2>
         </motion.div>
 

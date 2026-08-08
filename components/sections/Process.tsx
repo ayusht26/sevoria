@@ -5,23 +5,23 @@ import { motion } from "framer-motion"
 const PROCESS_STEPS = [
   {
     number: "01",
-    title: "Audit & Analysis",
-    description: "Deep dive into your clinic’s current market share, online visibility, patient reviews, and competitor landscapes in Lucknow.",
+    title: "Requirement & Consultation",
+    description: "Understanding specific pharmaceutical, medical orthopaedic, or hygiene product needs for retail buyers, clinics, or practitioners.",
   },
   {
     number: "02",
-    title: "Strategy & Framing",
-    description: "Formulating compliant campaign messaging, high-converting landing funnels, and local SEO blueprints tailored to your medical specialty.",
+    title: "Verified Sourcing",
+    description: "Procuring authentic medicines and medical goods directly from licensed manufacturers and certified pharma distributors.",
   },
   {
     number: "03",
-    title: "Launch & Acquisition",
-    description: "Deploying high-intent search ads, hyper-targeted social branding, and patient inquiry automation tools.",
+    title: "Quality Control & Storage",
+    description: "Inspecting batch numbers, expiry dates, and maintaining regulated storage conditions at our Ashiyana, Lucknow facility.",
   },
   {
     number: "04",
-    title: "Optimization & Scale",
-    description: "Continuously refining ad spend, scaling patient volume, and solidifying long-term clinic authority.",
+    title: "Fulfillment & Delivery",
+    description: "Efficient over-the-counter retail sales and prompt regional distribution across Lucknow and surrounding Uttar Pradesh areas.",
   },
 ]
 
@@ -37,9 +37,9 @@ export function Process() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-start gap-3"
         >
-          <span className="mono-eyebrow">HOW WE WORK</span>
+          <span className="mono-eyebrow">OUR PROCESS</span>
           <h2 className="heading-lg max-w-[720px] text-ink">
-            A methodical 4-step framework for predictable clinic growth.
+            A reliable 4-step workflow for authentic pharmaceutical & medical supply.
           </h2>
         </motion.div>
 

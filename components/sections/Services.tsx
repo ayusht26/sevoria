@@ -2,38 +2,38 @@
 
 import { motion } from "framer-motion"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Target, Stethoscope, Search, Megaphone, Monitor, Star } from "lucide-react"
+import { Pill, Activity, Sparkles, ShieldCheck, Truck, Store } from "lucide-react"
 
 const SERVICES = [
   {
-    icon: Target,
-    title: "Patient Acquisition",
-    description: "Multi-channel lead funnels optimized to deliver qualified, high-intent patient inquiries directly to your front desk.",
+    icon: Pill,
+    title: "Retail Sale of Pharmaceuticals",
+    description: "Dispensing authentic prescription medicines, therapeutic drugs, and everyday healthcare pharmaceuticals with strict quality compliance.",
   },
   {
-    icon: Stethoscope,
-    title: "Doctor & Clinic Branding",
-    description: "Positioning practitioners as premier local medical authorities through refined visual identity and thought leadership.",
+    icon: Activity,
+    title: "Medical & Orthopaedic Goods",
+    description: "Sourcing and retailing premium orthopaedic supports, braces, rehabilitation aids, and specialized medical clinical equipment.",
   },
   {
-    icon: Search,
-    title: "Medical SEO & Local Search",
-    description: "Dominating local search results for high-value treatments, procedures, and specialist keywords in your city.",
+    icon: Sparkles,
+    title: "Toilet Articles & Personal Hygiene",
+    description: "A wide selection of personal care products, skin hygiene essentials, sanitization items, and premium toilet articles.",
   },
   {
-    icon: Megaphone,
-    title: "Healthcare Ads (Google & Meta)",
-    description: "Targeted PPC and social ad campaigns compliant with healthcare advertising policies and optimized for maximum ROI.",
+    icon: Store,
+    title: "Retail Pharmacy & Healthcare Outlet",
+    description: "Accessible retail store located in Ashiyana, Lucknow, serving individual patients, practitioners, and regional buyers.",
   },
   {
-    icon: Monitor,
-    title: "Website & Landing Page Design",
-    description: "Lightning-fast, high-converting digital portals engineered specifically for medical trust and frictionless appointment booking.",
+    icon: Truck,
+    title: "Order Fulfilment & Supply",
+    description: "Streamlined inventory management and dependable local delivery for clinics, hospitals, and retail consumers.",
   },
   {
-    icon: Star,
-    title: "Reputation & Review Management",
-    description: "Systematic Google Business review generation and proactive online reputation shielding for doctors and clinics.",
+    icon: ShieldCheck,
+    title: "Quality Compliance & Standards",
+    description: "Full adherence to Indian regulatory standards and MCA guidelines, ensuring genuine products and transparent sourcing.",
   },
 ]
 
@@ -68,9 +68,9 @@ export function Services() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-start gap-3"
         >
-          <span className="mono-eyebrow">WHAT WE DO</span>
+          <span className="mono-eyebrow">OUR BUSINESS SCOPE</span>
           <h2 className="heading-lg max-w-[720px] text-ink">
-            Everything a modern medical brand needs to grow.
+            Activities as per MCA records of SEVIORA PHARMA PRIVATE LIMITED.
           </h2>
         </motion.div>
 
