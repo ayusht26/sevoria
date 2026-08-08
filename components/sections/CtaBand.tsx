@@ -45,7 +45,7 @@ export function CtaBand() {
           >
             <a href="#contact">
               Send Product Inquiry
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 md:group-hover:translate-x-1" />
             </a>
           </Button>
         </motion.div>
@@ -59,7 +59,7 @@ export function CtaBand() {
         >
           <a
             href={`tel:${BUSINESS_INFO.phone}`}
-            className="flex items-center gap-2 hover:text-ink transition-colors"
+            className="flex items-center gap-2 md:hover:text-ink transition-colors"
           >
             <Phone className="h-4 w-4 text-link" />
             <span>{BUSINESS_INFO.formattedPhone}</span>
@@ -67,7 +67,7 @@ export function CtaBand() {
           <span className="hidden sm:inline text-hairline">•</span>
           <a
             href={`mailto:${BUSINESS_INFO.email}`}
-            className="flex items-center gap-2 hover:text-ink transition-colors"
+            className="flex items-center gap-2 md:hover:text-ink transition-colors"
           >
             <Mail className="h-4 w-4 text-link" />
             <span>{BUSINESS_INFO.email}</span>

@@ -178,3 +178,10 @@
 .animate-marquee {
   animation: marquee var(--duration, 90s) linear infinite;
 }
+
+/* Mobile Responsive: Disable Card Hover Transforms & Sticky Hovering */
+@media (max-width: 767px), (pointer: coarse) {
+  *:hover {
+    transform: none !important;
+  }
+}

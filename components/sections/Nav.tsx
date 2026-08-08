@@ -11,7 +11,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { cn } from "@/lib/utils"
 
 const NAV_LINKS = [
   { name: "About", href: "#about" },
@@ -23,37 +22,15 @@ const NAV_LINKS = [
 ]
 
 export function Nav() {
-  const [isScrolled, setIsScrolled] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      // Gains border hairline & backdrop blur after scrolling 60px past top hero
-      if (window.scrollY > 60) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300 flex items-center px-6 md:px-12",
-        isScrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-hairline"
-          : "bg-transparent border-b border-transparent"
-      )}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 md:px-12 bg-black/80 backdrop-blur-md border-b border-hairline">
       <div className="mx-auto w-full max-w-[1200px] flex items-center justify-between">
         {/* Brand Wordmark */}
         <a
           href="#"
-          className="text-xl font-semibold tracking-tight text-ink hover:text-white transition-colors"
+          className="text-xl font-semibold tracking-tight text-ink md:hover:text-white transition-colors"
         >
           {BUSINESS_INFO.brandName}
         </a>
@@ -64,7 +41,7 @@ export function Nav() {
             <a
               key={link.name}
               href={link.href}
-              className="body-md text-body hover:text-ink transition-colors duration-200"
+              className="body-md text-body md:hover:text-ink transition-colors duration-200"
             >
               {link.name}
             </a>
@@ -87,7 +64,7 @@ export function Nav() {
             <SheetTrigger asChild className="md:hidden">
               <button
                 aria-label="Open Navigation Menu"
-                className="p-2 text-ink hover:text-white rounded-md border border-hairline bg-canvas-elevated min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="p-2 text-ink md:hover:text-white rounded-md border border-hairline bg-canvas-elevated min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 <Menu className="h-6 w-6" />
               </button>
@@ -105,7 +82,7 @@ export function Nav() {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-lg font-medium text-body hover:text-ink transition-colors py-2 border-b border-hairline-soft min-h-[44px] flex items-center"
+                      className="text-lg font-medium text-body md:hover:text-ink transition-colors py-2 border-b border-hairline-soft min-h-[44px] flex items-center"
                     >
                       {link.name}
                     </a>

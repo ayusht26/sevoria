@@ -86,12 +86,12 @@ export function Services() {
             const Icon = service.icon
             return (
               <motion.div key={index} variants={itemVariants}>
-                <Card className="h-full bg-canvas-elevated border-hairline hover:border-mute transition-all duration-300 group p-2">
+                <Card className="h-full bg-canvas-elevated border-hairline md:hover:border-mute transition-all duration-300 group p-2">
                   <CardHeader className="flex flex-col gap-4">
-                    <div className="h-12 w-12 rounded-lg bg-hairline-soft border border-hairline flex items-center justify-center text-link group-hover:border-link/50 transition-colors">
+                    <div className="h-12 w-12 rounded-lg bg-hairline-soft border border-hairline flex items-center justify-center text-link md:group-hover:border-link/50 transition-colors">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <CardTitle className="text-xl font-semibold text-ink group-hover:text-white transition-colors">
+                    <CardTitle className="text-xl font-semibold text-ink md:group-hover:text-white transition-colors">
                       {service.title}
                     </CardTitle>
                     <CardDescription className="body-md text-body leading-relaxed">

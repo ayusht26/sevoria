@@ -10,19 +10,19 @@ const buttonVariants = cva(
       variant: {
         // Marketing CTAs (§2.4)
         primaryPill:
-          "bg-white text-black hover:bg-[#f0f0f0] rounded-full button-lg shadow-sm hover:scale-[1.02]",
+          "bg-white text-black md:hover:bg-[#f0f0f0] rounded-full button-lg shadow-sm md:hover:scale-[1.02]",
         secondaryPill:
-          "bg-transparent border border-hairline text-ink hover:bg-hairline-soft rounded-full button-lg",
+          "bg-transparent border border-hairline text-ink md:hover:bg-hairline-soft rounded-full button-lg",
         
         // Nav & App buttons (§2.4)
         default:
-          "bg-white text-black hover:bg-[#f0f0f0] rounded-md button-md",
+          "bg-white text-black md:hover:bg-[#f0f0f0] rounded-md button-md",
         outline:
-          "border border-hairline bg-transparent text-ink hover:bg-canvas-elevated hover:border-mute rounded-md button-md",
+          "border border-hairline bg-transparent text-ink md:hover:bg-canvas-elevated md:hover:border-mute rounded-md button-md",
         ghost:
-          "text-body hover:text-ink hover:bg-canvas-elevated rounded-md button-md",
+          "text-body md:hover:text-ink md:hover:bg-canvas-elevated rounded-md button-md",
         link:
-          "text-link underline-offset-4 hover:underline button-md p-0 h-auto",
+          "text-link underline-offset-4 md:hover:underline button-md p-0 h-auto",
       },
       size: {
         default: "h-10 px-4 py-2",

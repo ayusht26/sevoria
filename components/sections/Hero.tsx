@@ -73,7 +73,7 @@ export function Hero() {
             >
               <a href="#contact">
                 Contact Us
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 md:group-hover:translate-x-1" />
               </a>
             </Button>
           </div>
@@ -83,7 +83,7 @@ export function Hero() {
               variant="secondaryPill"
               size="pillLg"
               asChild
-              className="w-full sm:w-auto border border-hairline hover:border-hairline/80 backdrop-blur-sm"
+              className="w-full sm:w-auto border border-hairline md:hover:border-hairline/80 backdrop-blur-sm"
             >
               <a href="#services">Explore Activities</a>
             </Button>
@@ -100,7 +100,7 @@ export function Hero() {
             gradientFrom="#0070f3"
             gradientTo="#38bdf8"
             gradientColor="rgba(56, 189, 248, 0.12)"
-            className="p-6 transition-all duration-300 hover:scale-[1.02] border-hairline/60 bg-canvas-elevated/70 backdrop-blur-xl shadow-xl shadow-black/50"
+            className="p-6 transition-all duration-300 md:hover:scale-[1.02] border-hairline/60 bg-canvas-elevated/70 backdrop-blur-xl shadow-xl shadow-black/50"
           >
             <div className="flex flex-col h-full justify-between gap-4">
               <div className="flex items-center justify-between">
@@ -128,7 +128,7 @@ export function Hero() {
             gradientFrom="#06b6d4"
             gradientTo="#10b981"
             gradientColor="rgba(6, 182, 212, 0.12)"
-            className="p-6 transition-all duration-300 hover:scale-[1.02] border-hairline/60 bg-canvas-elevated/70 backdrop-blur-xl shadow-xl shadow-black/50"
+            className="p-6 transition-all duration-300 md:hover:scale-[1.02] border-hairline/60 bg-canvas-elevated/70 backdrop-blur-xl shadow-xl shadow-black/50"
           >
             <div className="flex flex-col h-full justify-between gap-4">
               <div className="flex items-center justify-between">
@@ -156,7 +156,7 @@ export function Hero() {
             gradientFrom="#7928ca"
             gradientTo="#a855f7"
             gradientColor="rgba(168, 85, 247, 0.12)"
-            className="p-6 transition-all duration-300 hover:scale-[1.02] border-hairline/60 bg-canvas-elevated/70 backdrop-blur-xl shadow-xl shadow-black/50"
+            className="p-6 transition-all duration-300 md:hover:scale-[1.02] border-hairline/60 bg-canvas-elevated/70 backdrop-blur-xl shadow-xl shadow-black/50"
           >
             <div className="flex flex-col h-full justify-between gap-4">
               <div className="flex items-center justify-between">

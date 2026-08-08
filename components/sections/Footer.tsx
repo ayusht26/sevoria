@@ -24,27 +24,27 @@ export function Footer() {
             <h4 className="mono-eyebrow text-ink">NAVIGATION</h4>
             <ul className="flex flex-col gap-2.5 body-md text-body">
               <li>
-                <a href="#about" className="hover:text-ink transition-colors">
+                <a href="#about" className="md:hover:text-ink transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-ink transition-colors">
+                <a href="#services" className="md:hover:text-ink transition-colors">
                   Business Activities
                 </a>
               </li>
               <li>
-                <a href="#why-us" className="hover:text-ink transition-colors">
+                <a href="#why-us" className="md:hover:text-ink transition-colors">
                   Why Sevoria Pharma
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:text-ink transition-colors">
+                <a href="#process" className="md:hover:text-ink transition-colors">
                   Our Process
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-ink transition-colors">
+                <a href="#testimonials" className="md:hover:text-ink transition-colors">
                   Client Feedback
                 </a>
               </li>
@@ -70,13 +70,13 @@ export function Footer() {
               <p className="text-ink font-medium">{BUSINESS_INFO.owner}</p>
               <a
                 href={`tel:${BUSINESS_INFO.phone}`}
-                className="hover:text-ink transition-colors font-semibold"
+                className="md:hover:text-ink transition-colors font-semibold"
               >
                 {BUSINESS_INFO.formattedPhone}
               </a>
               <a
                 href={`mailto:${BUSINESS_INFO.email}`}
-                className="hover:text-ink transition-colors text-xs text-mute"
+                className="md:hover:text-ink transition-colors text-xs text-mute"
               >
                 {BUSINESS_INFO.email}
               </a>

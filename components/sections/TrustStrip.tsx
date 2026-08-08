@@ -40,7 +40,7 @@ export function TrustStrip() {
       {/* Hospital Logos Horizontal Marquee with slow smooth single-container animation */}
       <div className="relative mt-6 flex w-full flex-col items-center justify-center overflow-hidden">
         <div className="group flex overflow-hidden p-2 [--gap:2rem] [gap:var(--gap)] flex-row [--duration:90s] w-full">
-          <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+          <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row md:group-hover:[animation-play-state:paused]">
             {[...Array(4)].map((_, setIndex) =>
               HOSPITAL_LOGOS.map((item, i) => {
                 const LogoComp = item.component
@@ -49,7 +49,7 @@ export function TrustStrip() {
                     key={`${setIndex}-${i}`}
                     className="px-8 py-3.5 shrink-0 flex items-center justify-center h-14 w-[200px] sm:w-[220px]"
                   >
-                    <LogoComp className="h-7 w-auto opacity-70 hover:opacity-100 transition-opacity" />
+                    <LogoComp className="h-7 w-auto opacity-70 md:hover:opacity-100 transition-opacity" />
                   </MagicCard>
                 )
               })

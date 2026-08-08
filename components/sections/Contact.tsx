@@ -110,7 +110,7 @@ export function Contact() {
                     </h4>
                     <a
                       href={`tel:${BUSINESS_INFO.phone}`}
-                      className="body-md text-ink hover:text-link transition-colors mt-0.5 block font-semibold"
+                      className="body-md text-ink md:hover:text-link transition-colors mt-0.5 block font-semibold"
                     >
                       {BUSINESS_INFO.formattedPhone}
                     </a>
@@ -127,7 +127,7 @@ export function Contact() {
                     </h4>
                     <a
                       href={`mailto:${BUSINESS_INFO.email}`}
-                      className="body-md text-ink hover:text-link transition-colors mt-0.5 block"
+                      className="body-md text-ink md:hover:text-link transition-colors mt-0.5 block"
                     >
                       {BUSINESS_INFO.email}
                     </a>
@@ -148,7 +148,7 @@ export function Contact() {
                   allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="w-full h-full grayscale opacity-85 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300"
                 />
               </div>
               <div className="flex items-center justify-between px-1">
@@ -159,7 +159,7 @@ export function Contact() {
                   href={BUSINESS_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-link hover:underline font-medium"
+                  className="inline-flex items-center gap-1.5 text-xs text-link md:hover:underline font-medium"
                 >
                   <span>Open in Google Maps</span>
                   <Send className="h-3 w-3" />

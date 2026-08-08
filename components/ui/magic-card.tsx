@@ -97,14 +97,30 @@ export const MagicCard = React.forwardRef<HTMLDivElement, MagicCardProps>(
     [mouseX, mouseY, orbVisible]
   )
 
+  const isMobile = useCallback(() => {
+    if (typeof window === "undefined") return false
+    return window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches
+  }, [])
+
   const handlePointerMove = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
+      if (isMobile()) return
       const rect = e.currentTarget.getBoundingClientRect()
       mouseX.set(e.clientX - rect.left)
       mouseY.set(e.clientY - rect.top)
     },
-    [mouseX, mouseY]
+    [mouseX, mouseY, isMobile]
   )
+
+  const handlePointerEnter = useCallback(() => {
+    if (isMobile()) return
+    reset("enter")
+  }, [reset, isMobile])
+
+  const handlePointerLeave = useCallback(() => {
+    if (isMobile()) return
+    reset("leave")
+  }, [reset, isMobile])
 
   useEffect(() => {
     reset("init")
@@ -138,8 +154,8 @@ export const MagicCard = React.forwardRef<HTMLDivElement, MagicCardProps>(
           className
         )}
         onPointerMove={handlePointerMove}
-        onPointerLeave={() => reset("leave")}
-        onPointerEnter={() => reset("enter")}
+        onPointerLeave={handlePointerLeave}
+        onPointerEnter={handlePointerEnter}
         style={{
           ...style,
           background: useMotionTemplate`
@@ -158,7 +174,7 @@ export const MagicCard = React.forwardRef<HTMLDivElement, MagicCardProps>(
         {mode === "gradient" && (
           <motion.div
             suppressHydrationWarning
-            className="pointer-events-none absolute inset-px z-30 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            className="pointer-events-none absolute inset-px z-30 rounded-[inherit] opacity-0 transition-opacity duration-300 md:group-hover:opacity-100"
             style={{
               background: useMotionTemplate`
                 radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,

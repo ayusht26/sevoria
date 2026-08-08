@@ -61,13 +61,13 @@ export function Process() {
               >
                 {/* Geist Mono Large Step Number */}
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-2xl md:text-3xl font-semibold text-mute group-hover:text-link transition-colors">
+                  <span className="font-mono text-2xl md:text-3xl font-semibold text-mute md:group-hover:text-link transition-colors">
                     {step.number}
                   </span>
-                  <span className="h-2 w-2 rounded-full bg-link/60 group-hover:bg-link group-hover:scale-125 transition-all" />
+                  <span className="h-2 w-2 rounded-full bg-link/60 md:group-hover:bg-link md:group-hover:scale-125 transition-all" />
                 </div>
 
-                <h3 className="heading-md text-ink group-hover:text-white transition-colors">
+                <h3 className="heading-md text-ink md:group-hover:text-white transition-colors">
                   {step.title}
                 </h3>
                 <p className="body-md text-body leading-relaxed">
