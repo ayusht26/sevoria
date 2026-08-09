@@ -4,6 +4,7 @@ import * as React from "react"
 import { useHeroAnimation } from "@/hooks/useHeroAnimation"
 import { Button } from "@/components/ui/button"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
+import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { ArrowRight, ShieldCheck, Pill, MapPin } from "lucide-react"
 import { Component as GradientBackground } from "@/components/ui/gradient-background-4"
 import { MagicCard } from "@/components/ui/magic-card"
@@ -52,10 +53,12 @@ export function Hero() {
 
         {/* Main Headline */}
         <h1 className="hero-animate-item hero-headline display-xl text-ink max-w-[950px] opacity-0 font-semibold tracking-tight leading-[1.08]">
-          Retail Sale of Pharmaceuticals &{" "}
-          <span className="bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">
-            Medical Goods.
-          </span>
+          <DiaTextReveal
+            duration={2.2}
+            textColor="#ffffff"
+            colors={["#50e3c2", "#0070f3", "#7928ca", "#ff0080", "#ffffff"]}
+            text="Retail Sale of Pharmaceuticals & Medical Goods."
+          />
         </h1>
 
         {/* Subheadline */}
