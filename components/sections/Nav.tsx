@@ -5,6 +5,7 @@ import { Menu } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/business-info"
 import { Button } from "@/components/ui/button"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
+import { TextScramble } from "@/components/ui/text-scramble"
 import {
   Sheet,
   SheetContent,
@@ -31,9 +32,20 @@ export function Nav() {
         {/* Brand Wordmark */}
         <a
           href="#"
-          className="text-xl font-semibold tracking-tight text-ink md:hover:text-white transition-colors"
+          className="text-xl font-semibold tracking-tight text-ink transition-colors flex items-center"
         >
-          {BUSINESS_INFO.brandName}
+          {/* PC mode text scramble hover effect */}
+          <span className="hidden md:inline-flex items-center">
+            <TextScramble
+              text={BUSINESS_INFO.brandName}
+              textClassName="text-xl font-semibold tracking-tight text-ink"
+              scrambleColor="text-link"
+            />
+          </span>
+          {/* Mobile view standard text */}
+          <span className="md:hidden">
+            {BUSINESS_INFO.brandName}
+          </span>
         </a>
 
         {/* Desktop Nav Links */}
