@@ -3,6 +3,7 @@
 import * as React from "react"
 import { useHeroAnimation } from "@/hooks/useHeroAnimation"
 import { Button } from "@/components/ui/button"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { ArrowRight, ShieldCheck, Pill, MapPin } from "lucide-react"
 import { Component as GradientBackground } from "@/components/ui/gradient-background-4"
 import { MagicCard } from "@/components/ui/magic-card"
@@ -64,12 +65,18 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-3 w-full max-w-md">
-          <div className="hero-animate-item hero-cta-item w-full sm:w-auto opacity-0">
+          <div className="hero-animate-item hero-cta-item w-full sm:w-auto opacity-0 flex justify-center">
+            <InteractiveHoverButton
+              variant="primary"
+              text="Contact Us"
+              href="#contact"
+              className="hidden sm:inline-flex w-auto px-7 py-3 text-base shadow-lg shadow-blue-600/20"
+            />
             <Button
               variant="primaryPill"
               size="pillLg"
               asChild
-              className="w-full sm:w-auto gap-2 group shadow-lg shadow-blue-600/20"
+              className="sm:hidden w-full gap-2 group shadow-lg shadow-blue-600/20"
             >
               <a href="#contact">
                 Contact Us
@@ -78,12 +85,18 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="hero-animate-item hero-cta-item w-full sm:w-auto opacity-0">
+          <div className="hero-animate-item hero-cta-item w-full sm:w-auto opacity-0 flex justify-center">
+            <InteractiveHoverButton
+              variant="secondary"
+              text="Explore Activities"
+              href="#services"
+              className="hidden sm:inline-flex w-auto px-7 py-3 text-base border border-hairline backdrop-blur-sm"
+            />
             <Button
               variant="secondaryPill"
               size="pillLg"
               asChild
-              className="w-full sm:w-auto border border-hairline md:hover:border-hairline/80 backdrop-blur-sm"
+              className="sm:hidden w-full border border-hairline md:hover:border-hairline/80 backdrop-blur-sm"
             >
               <a href="#services">Explore Activities</a>
             </Button>

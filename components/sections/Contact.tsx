@@ -10,6 +10,7 @@ import { BUSINESS_INFO } from "@/lib/business-info"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { MagicCard } from "@/components/ui/magic-card"
 import { MapPin, Phone, Mail, CheckCircle, Send } from "lucide-react"
 
@@ -186,11 +187,17 @@ export function Contact() {
                 <p className="body-md text-body max-w-[400px]">
                   Thank you. Satyendra Tiwari or a representative from SEVIORA PHARMA PRIVATE LIMITED will get back to you shortly.
                 </p>
+                <InteractiveHoverButton
+                  variant="secondary"
+                  text="Send Another Message"
+                  onClick={() => setIsSubmitted(false)}
+                  className="hidden sm:inline-flex mt-4"
+                />
                 <Button
                   variant="secondaryPill"
                   size="pillMd"
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-4"
+                  className="sm:hidden mt-4"
                 >
                   Send Another Message
                 </Button>
@@ -281,18 +288,26 @@ export function Contact() {
                 </div>
 
                 {/* Submit Button */}
+                <InteractiveHoverButton
+                  variant="primary"
+                  type="submit"
+                  text={isSubmitting ? "Sending..." : "Send Product Enquiry"}
+                  icon={<Send className="h-4 w-4 shrink-0" />}
+                  disabled={isSubmitting}
+                  className="hidden sm:inline-flex px-8 py-3.5 text-base w-auto self-start"
+                />
                 <Button
                   type="submit"
                   variant="primaryPill"
                   size="pillLg"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto gap-2"
+                  className="sm:hidden w-full gap-2"
                 >
                   {isSubmitting ? (
                     "Sending..."
                   ) : (
                     <>
-                      <span>Send Product Inquiry</span>
+                      <span>Send Product Enquiry</span>
                       <Send className="h-4 w-4" />
                     </>
                   )}

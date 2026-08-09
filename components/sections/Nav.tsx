@@ -4,6 +4,7 @@ import * as React from "react"
 import { Menu } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/business-info"
 import { Button } from "@/components/ui/button"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import {
   Sheet,
   SheetContent,
@@ -50,14 +51,12 @@ export function Nav() {
 
         {/* Right CTA Button & Mobile Drawer */}
         <div className="flex items-center gap-4">
-          <Button
-            variant="primaryPill"
-            size="pillMd"
-            asChild
-            className="hidden sm:inline-flex"
-          >
-            <a href="#contact">Book a Call</a>
-          </Button>
+          <InteractiveHoverButton
+            variant="primary"
+            text="Book a Call"
+            href="#contact"
+            className="hidden sm:inline-flex text-xs py-2 px-5 min-w-28"
+          />
 
           {/* Mobile Sheet Drawer Trigger */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>

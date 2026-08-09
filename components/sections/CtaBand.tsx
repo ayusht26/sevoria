@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { BUSINESS_INFO } from "@/lib/business-info"
 import { ArrowRight, Phone, Mail } from "lucide-react"
 
@@ -37,15 +38,21 @@ export function CtaBand() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
         >
+          <InteractiveHoverButton
+            variant="primary"
+            text="Send Product Enquiry"
+            href="#contact"
+            className="hidden sm:inline-flex px-8 py-3.5 text-base"
+          />
           <Button
             variant="primaryPill"
             size="pillLg"
             asChild
-            className="w-full sm:w-auto gap-2 group"
+            className="sm:hidden w-full gap-2 group"
           >
             <a href="#contact">
-              Send Product Inquiry
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 md:group-hover:translate-x-1" />
+              Send Product Enquiry
+              <ArrowRight className="h-4 w-4 transition-transform duration-200" />
             </a>
           </Button>
         </motion.div>
