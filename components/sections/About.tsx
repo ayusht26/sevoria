@@ -69,8 +69,7 @@ export function About() {
             className="lg:col-span-5"
           >
             <Card className="p-8 relative overflow-hidden border-hairline bg-canvas-elevated">
-              {/* Subtle Corner Glow Accent */}
-              <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-link/10 filter blur-xl pointer-events-none" />
+
 
               <CardContent className="p-0 flex flex-col gap-6">
                 <div className="flex items-center gap-4">

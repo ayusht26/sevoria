@@ -79,10 +79,10 @@ export function TextScramble({
 
   return (
     <span
-      className={cn("inline-flex items-center cursor-pointer select-none", className)}
+      className={cn("inline-flex items-center cursor-pointer select-none shrink-0", className)}
       onMouseEnter={handleMouseEnter}
     >
-      <span className={cn("inline-block", textClassName)}>
+      <span className={cn("inline-flex items-center whitespace-nowrap", textClassName)}>
         {displayText.split("").map((char, i) => (
           <span
             key={i}

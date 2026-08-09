@@ -9,10 +9,7 @@ import { ArrowRight, Phone, Mail } from "lucide-react"
 export function CtaBand() {
   return (
     <section className="relative bg-gradient-to-b from-canvas via-canvas-elevated to-canvas text-ink py-24 md:py-32 px-6 border-y border-hairline overflow-hidden">
-      {/* Background Subtle Mesh Glow */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-20">
-        <div className="w-[600px] h-[300px] bg-gradient-to-r from-link via-violet to-cyan filter blur-[100px] rounded-full" />
-      </div>
+
 
       <div className="relative z-10 mx-auto max-w-[1200px] flex flex-col items-center text-center gap-8">
         <motion.div

@@ -67,7 +67,7 @@ const InteractiveHoverButton = React.forwardRef<
       "group/ihb relative inline-flex items-center justify-center min-w-32 cursor-pointer overflow-hidden rounded-full px-6 py-2.5 text-center font-semibold transition-all duration-300",
       isPrimary
         ? "bg-white text-black border border-white shadow-sm"
-        : "bg-transparent text-ink border border-hairline hover:border-white/40",
+        : "bg-white/[0.04] text-ink border border-white/25 hover:border-white/60 backdrop-blur-sm shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]",
       className
     );
 

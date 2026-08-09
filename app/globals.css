@@ -6,14 +6,15 @@
 
 :root {
   /* Sevoria Geist Dark Mode Tokens */
-  --canvas: #000000;
-  --canvas-elevated: #0a0a0a;
-  --hairline-soft: #111111;
+  /* Supabase Dark Gray Canvas Option: #121212 | Pure Black Option: #000000 */
+  --canvas: #121212; /* To revert to pure black, change to: #000000 */
+  --canvas-elevated: #1a1a1a; /* Pure black option: #0a0a0a */
+  --hairline-soft: #1e1e1e; /* Pure black option: #111111 */
   --ink: #ededed;
   --body: #a1a1a1;
   --mute: #888888;
   --faint: #666666;
-  --hairline: #333333;
+  --hairline: #2a2a2a; /* Pure black option: #333333 */
   --link: #0070f3;
   --link-deep: #3291ff;
   --link-soft: rgba(0, 112, 243, 0.1);
@@ -28,34 +29,35 @@
   --gradient-blob-3: #50e3c2;
 
   /* Shadcn UI Dark Overrides */
-  --background: #000000;
+  /* Supabase Dark Gray Background Option: #121212 | Pure Black Option: #000000 */
+  --background: #121212; /* To revert to pure black, change to: #000000 */
   --foreground: #ededed;
-  --card: #0a0a0a;
+  --card: #181818; /* Pure black option: #0a0a0a */
   --card-foreground: #ededed;
-  --popover: #0a0a0a;
+  --popover: #181818; /* Pure black option: #0a0a0a */
   --popover-foreground: #ededed;
   --primary: #ffffff;
   --primary-foreground: #000000;
-  --secondary: #111111;
+  --secondary: #1e1e1e; /* Pure black option: #111111 */
   --secondary-foreground: #ededed;
-  --muted: #111111;
+  --muted: #1e1e1e;
   --muted-foreground: #888888;
-  --accent: #111111;
+  --accent: #1e1e1e;
   --accent-foreground: #ededed;
   --destructive: #ee0000;
   --destructive-foreground: #ffffff;
-  --border: #333333;
-  --input: #333333;
+  --border: #2a2a2a; /* Pure black option: #333333 */
+  --input: #2a2a2a;
   --ring: #0070f3;
   --radius: 0.75rem;
 
-  --sidebar: #0a0a0a;
+  --sidebar: #181818;
   --sidebar-foreground: #ededed;
   --sidebar-primary: #0070f3;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #111111;
+  --sidebar-accent: #1e1e1e;
   --sidebar-accent-foreground: #ededed;
-  --sidebar-border: #333333;
+  --sidebar-border: #2a2a2a;
   --sidebar-ring: #0070f3;
 }
 

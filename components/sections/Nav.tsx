@@ -26,16 +26,17 @@ const NAV_LINKS = [
 export function Nav() {
   const [isOpen, setIsOpen] = React.useState(false)
 
+  // Pure Black Nav option: bg-black/80 | Supabase Dark Gray Nav option: bg-canvas/85
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 md:px-12 bg-black/80 backdrop-blur-md border-b border-hairline">
+    <header className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 md:px-12 bg-canvas/85 backdrop-blur-md border-b border-hairline">
       <div className="mx-auto w-full max-w-[1200px] flex items-center justify-between">
         {/* Brand Wordmark */}
         <a
           href="#"
-          className="text-xl font-semibold tracking-tight text-ink transition-colors flex items-center"
+          className="text-xl font-semibold tracking-tight text-ink transition-colors flex items-center shrink-0 w-[76px]"
         >
           {/* PC mode text scramble hover effect */}
-          <span className="hidden md:inline-flex items-center">
+          <span className="hidden md:inline-flex items-center shrink-0 w-[76px]">
             <TextScramble
               text={BUSINESS_INFO.brandName}
               textClassName="text-xl font-semibold tracking-tight text-ink"

@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal"
 import { ArrowRight, ShieldCheck, Pill, MapPin } from "lucide-react"
-import { Component as GradientBackground } from "@/components/ui/gradient-background-4"
 import { MagicCard } from "@/components/ui/magic-card"
 
 export function Hero() {
@@ -22,23 +21,33 @@ export function Hero() {
       ref={containerRef}
       className="relative min-h-[92vh] w-full bg-canvas flex flex-col justify-between pt-32 pb-16 px-4 sm:px-6 overflow-hidden"
     >
-      {/* 1. Gradient Background Component */}
-      <GradientBackground className="pointer-events-none z-0" />
+      {/* ─── ULTRA-CLEAN & MINIMAL DARK HERO BACKGROUND (NO COLOR GLOW) ─── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        {/* 1. Animated Blob Refs (Preserved transparently for useHeroAnimation compatibility) */}
+        <div ref={blob1Ref} className="absolute w-1 h-1 opacity-0" />
+        <div ref={blob2Ref} className="absolute w-1 h-1 opacity-0" />
+        <div ref={blob3Ref} className="absolute w-1 h-1 opacity-0" />
 
-      {/* 2. Animated Mesh Gradient Backdrop Blobs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-30 z-0">
+        {/* 2. Precision Technical Micro-Grid with Subtle Radial Vignette */}
         <div
-          ref={blob1Ref}
-          className="absolute w-[500px] h-[500px] rounded-full bg-link filter blur-[120px] -top-10 -left-10"
+          className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:56px_56px]"
+          style={{
+            maskImage: "radial-gradient(ellipse 70% 55% at 50% 35%, black 15%, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse 70% 55% at 50% 35%, black 15%, transparent 75%)",
+          }}
         />
+
+        {/* 3. Subtle Tactile Noise Texture */}
         <div
-          ref={blob2Ref}
-          className="absolute w-[550px] h-[550px] rounded-full bg-violet filter blur-[130px] top-1/4 right-0"
+          className="absolute inset-0 opacity-[0.02] mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          }}
         />
-        <div
-          ref={blob3Ref}
-          className="absolute w-[450px] h-[450px] rounded-full bg-cyan filter blur-[110px] -bottom-10 left-1/3"
-        />
+
+        {/* 4. Top & Bottom Seamless Canvas Transitions */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-canvas via-canvas/80 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-canvas via-canvas/90 to-transparent" />
       </div>
 
       {/* Hero Core Content Container */}
@@ -93,13 +102,13 @@ export function Hero() {
               variant="secondary"
               text="Explore Activities"
               href="#services"
-              className="hidden sm:inline-flex w-auto px-7 py-3 text-base border border-hairline backdrop-blur-sm"
+              className="hidden sm:inline-flex w-auto px-7 py-3 text-base border border-white/30 hover:border-white/60 bg-white/[0.05] backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.03)]"
             />
             <Button
               variant="secondaryPill"
               size="pillLg"
               asChild
-              className="sm:hidden w-full border border-hairline md:hover:border-hairline/80 backdrop-blur-sm"
+              className="sm:hidden w-full border border-white/30 hover:border-white/60 bg-white/[0.05] backdrop-blur-md"
             >
               <a href="#services">Explore Activities</a>
             </Button>
