@@ -10,7 +10,6 @@ import { ThemeToggle } from "@/components/ui/theme-toggle"
 import {
   Sheet,
   SheetContent,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
@@ -103,13 +102,9 @@ export function Nav() {
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent className="flex flex-col justify-between">
-              <div className="flex flex-col gap-8 pt-6">
-                <SheetHeader>
-                  <SheetTitle className="text-xl font-semibold text-ink">
-                    {BUSINESS_INFO.brandName}
-                  </SheetTitle>
-                </SheetHeader>
+            <SheetContent hideCloseButton className="flex flex-col justify-between">
+              <div className="flex flex-col gap-6 pt-4">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <nav className="flex flex-col gap-6">
                   {NAV_LINKS.map((link) => (
                     <a
