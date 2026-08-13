@@ -1,6 +1,7 @@
 "use client"
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
+import { useTheme } from "next-themes"
 import {
   motion,
   useMotionTemplate,
@@ -38,11 +39,11 @@ export const MagicCard = React.forwardRef<HTMLDivElement, MagicCardProps>(
       gradientSize = 250,
       gradientColor = "rgba(255, 255, 255, 0.08)",
       gradientOpacity = 0.8,
-      gradientFrom = "#0070f3",
-      gradientTo = "#7928ca",
+      gradientFrom = "#3C6B54",
+      gradientTo = "#A97B33",
       mode = "gradient",
-      glowFrom = "#0070f3",
-      glowTo = "#50e3c2",
+      glowFrom = "#3C6B54",
+      glowTo = "#6FA98A",
       glowAngle = 90,
       glowSize = 420,
       glowBlur = 60,
@@ -55,7 +56,8 @@ export const MagicCard = React.forwardRef<HTMLDivElement, MagicCardProps>(
 
   useEffect(() => setMounted(true), [])
 
-  const isDarkTheme = true // Sevoria is styled natively in Dark Mode
+  const { resolvedTheme } = useTheme()
+  const isDarkTheme = resolvedTheme === "dark"
 
   const mouseX = useMotionValue(-gradientSize)
   const mouseY = useMotionValue(-gradientSize)

@@ -5,8 +5,6 @@ import { About } from "@/components/sections/About"
 import { Services } from "@/components/sections/Services"
 import { WhySevoria } from "@/components/sections/WhySevoria"
 import { Process } from "@/components/sections/Process"
-import { Testimonials } from "@/components/sections/Testimonials"
-import { CtaBand } from "@/components/sections/CtaBand"
 import { Contact } from "@/components/sections/Contact"
 import { Footer } from "@/components/sections/Footer"
 
@@ -18,7 +16,7 @@ export default function Home() {
 
       {/* Main Single-Page Content Assembly */}
       <main className="flex-1">
-        {/* 2. Hero (Anime.js Mesh Gradient & Entrance) */}
+        {/* 2. Hero */}
         <Hero />
 
         {/* 3. Trust Strip */}
@@ -36,17 +34,11 @@ export default function Home() {
         {/* 7. Process / How We Work */}
         <Process />
 
-        {/* 8. Testimonials Marquee */}
-        <Testimonials />
-
-        {/* 9. CTA Band */}
-        <CtaBand />
-
-        {/* 10. Contact Section */}
+        {/* 8. Contact Section */}
         <Contact />
       </main>
 
-      {/* 11. Footer */}
+      {/* 9. Footer */}
       <Footer />
     </div>
   )

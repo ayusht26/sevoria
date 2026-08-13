@@ -4,66 +4,148 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================================
+   LIGHT THEME (default) — "Apothecary Beige"
+   ============================================ */
 :root {
-  /* Sevoria Geist Dark Mode Tokens */
-  /* Supabase Dark Gray Canvas Option: #121212 | Pure Black Option: #000000 */
-  --canvas: #121212; /* To revert to pure black, change to: #000000 */
-  --canvas-elevated: #1a1a1a; /* Pure black option: #0a0a0a */
-  --hairline-soft: #1e1e1e; /* Pure black option: #111111 */
-  --ink: #ededed;
-  --body: #a1a1a1;
-  --mute: #888888;
-  --faint: #666666;
-  --hairline: #2a2a2a; /* Pure black option: #333333 */
-  --link: #0070f3;
-  --link-deep: #3291ff;
-  --link-soft: rgba(0, 112, 243, 0.1);
-  --violet: #7928ca;
-  --cyan: #50e3c2;
-  --error: #ee0000;
-  --warning: #f5a623;
+  color-scheme: light;
 
-  /* Hero mesh gradient stops */
-  --gradient-blob-1: #0070f3;
-  --gradient-blob-2: #7928ca;
-  --gradient-blob-3: #50e3c2;
+  --canvas: #F8F4EA;              /* warm parchment/ivory page background */
+  --canvas-elevated: #F1E9D6;     /* card / panel surface */
+  --canvas-elevated-2: #E9DFC5;   /* nested surfaces, inputs */
+  --hairline: #E1D5B7;            /* borders */
+  --hairline-soft: #ECE2C9;       /* faint borders / section dividers */
 
-  /* Shadcn UI Dark Overrides */
-  /* Supabase Dark Gray Background Option: #121212 | Pure Black Option: #000000 */
-  --background: #121212; /* To revert to pure black, change to: #000000 */
-  --foreground: #ededed;
-  --card: #181818; /* Pure black option: #0a0a0a */
-  --card-foreground: #ededed;
-  --popover: #181818; /* Pure black option: #0a0a0a */
-  --popover-foreground: #ededed;
-  --primary: #ffffff;
-  --primary-foreground: #000000;
-  --secondary: #1e1e1e; /* Pure black option: #111111 */
-  --secondary-foreground: #ededed;
-  --muted: #1e1e1e;
-  --muted-foreground: #888888;
-  --accent: #1e1e1e;
-  --accent-foreground: #ededed;
-  --destructive: #ee0000;
+  --ink: #221E16;                 /* primary text — warm near-black */
+  --body: #55503F;                /* paragraph text */
+  --mute: #8B8368;                /* labels, captions */
+  --faint: #B7AE92;               /* disabled / lowest-emphasis text */
+
+  --accent: #3C6B54;              /* primary interactive — deep sage/forest green */
+  --accent-deep: #294A3A;         /* hover / pressed state */
+  --accent-soft: rgba(60, 107, 84, 0.10);   /* tinted backgrounds, badges */
+  --gold: #A97B33;                /* secondary accent — use sparingly */
+
+  --error: #B3261E;
+  --warning: #8A5A12;
+
+  /* legacy names kept as aliases so old class names still compile */
+  --link: var(--accent);
+  --link-deep: var(--accent-deep);
+  --link-soft: var(--accent-soft);
+  --violet: var(--gold);
+  --cyan: var(--accent);
+
+  /* Shadcn UI variable overrides */
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: var(--canvas-elevated);
+  --card-foreground: var(--ink);
+  --popover: var(--canvas-elevated);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--canvas);
+  --secondary: var(--canvas-elevated-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--canvas-elevated);
+  --muted-foreground: var(--mute);
+  --accent: var(--accent-soft);
+  --accent-foreground: var(--accent);
+  --destructive: var(--error);
   --destructive-foreground: #ffffff;
-  --border: #2a2a2a; /* Pure black option: #333333 */
-  --input: #2a2a2a;
-  --ring: #0070f3;
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--accent);
   --radius: 0.75rem;
 
-  --sidebar: #181818;
-  --sidebar-foreground: #ededed;
-  --sidebar-primary: #0070f3;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1e1e1e;
-  --sidebar-accent-foreground: #ededed;
-  --sidebar-border: #2a2a2a;
-  --sidebar-ring: #0070f3;
+  --sidebar: var(--canvas-elevated);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: var(--canvas);
+  --sidebar-accent: var(--canvas-elevated-2);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--hairline);
+  --sidebar-ring: var(--accent);
+
+  /* Spacing scale */
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-section: clamp(4.5rem, 4rem + 3vw, 7rem);
+  --space-section-lg: clamp(5.5rem, 5rem + 4vw, 9rem);
+}
+
+/* ============================================
+   DARK THEME — same brand, inverted surface
+   ============================================ */
+.dark {
+  color-scheme: dark;
+
+  --canvas: #16130D;
+  --canvas-elevated: #1E1A11;
+  --canvas-elevated-2: #272014;
+  --hairline: #332B1B;
+  --hairline-soft: #241F14;
+
+  --ink: #F2ECDC;
+  --body: #B8B096;
+  --mute: #8C876C;
+  --faint: #5C5745;
+
+  --accent: #6FA98A;
+  --accent-deep: #4B8267;
+  --accent-soft: rgba(111, 169, 138, 0.14);
+  --gold: #D9A85C;
+
+  --error: #FF7A6B;
+  --warning: #F0BE5E;
+
+  --link: var(--accent);
+  --link-deep: var(--accent-deep);
+  --link-soft: var(--accent-soft);
+  --violet: var(--gold);
+  --cyan: var(--accent);
+
+  /* Shadcn UI variable overrides */
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: var(--canvas-elevated);
+  --card-foreground: var(--ink);
+  --popover: var(--canvas-elevated);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--canvas);
+  --secondary: var(--canvas-elevated-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--canvas-elevated);
+  --muted-foreground: var(--mute);
+  --accent: var(--accent-soft);
+  --accent-foreground: var(--accent);
+  --destructive: var(--error);
+  --destructive-foreground: #ffffff;
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--accent);
+  --radius: 0.75rem;
+
+  --sidebar: var(--canvas-elevated);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: var(--canvas);
+  --sidebar-accent: var(--canvas-elevated-2);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--hairline);
+  --sidebar-ring: var(--accent);
 }
 
 @theme {
   --color-canvas: var(--canvas);
   --color-canvas-elevated: var(--canvas-elevated);
+  --color-canvas-elevated-2: var(--canvas-elevated-2);
   --color-hairline-soft: var(--hairline-soft);
   --color-ink: var(--ink);
   --color-body: var(--body);
@@ -72,8 +154,9 @@
   --color-hairline: var(--hairline);
   --color-link: var(--link);
   --color-link-deep: var(--link-deep);
-  --color-violet: var(--violet);
-  --color-cyan: var(--cyan);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-gold: var(--gold);
   --color-error: var(--error);
   --color-warning: var(--warning);
 }
@@ -85,9 +168,12 @@
   }
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
+    scroll-padding-top: 5rem;
     background-color: var(--canvas);
     color: var(--ink);
+  }
+  section {
+    scroll-margin-top: 5rem;
   }
   body {
     background-color: var(--canvas);
@@ -95,6 +181,7 @@
     font-family: var(--font-sans), Inter, system-ui, sans-serif;
     overflow-x: hidden;
     margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 

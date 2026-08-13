@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button"
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import { MagicCard } from "@/components/ui/magic-card"
 import { MapPin, Phone, Mail, CheckCircle, Send } from "lucide-react"
+import { Reveal } from "@/components/motion/Reveal"
 
 // Form validation schema with Zod
 const contactFormSchema = z.object({
@@ -56,21 +57,15 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-canvas text-ink py-24 md:py-32 px-6">
+    <section id="contact" className="bg-canvas text-ink py-[var(--space-section)] px-5 sm:px-6 md:px-10 lg:px-14">
       <div className="mx-auto max-w-[1200px] flex flex-col gap-16">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-start gap-3"
-        >
+        <Reveal className="flex flex-col items-start gap-3">
           <span className="mono-eyebrow">GET IN TOUCH</span>
           <h2 className="heading-lg max-w-[720px] text-ink">
             Connect with SEVIORA PHARMA PRIVATE LIMITED.
           </h2>
-        </motion.div>
+        </Reveal>
 
         {/* Split Layout (2 Columns) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -87,7 +82,7 @@ export function Contact() {
 
               <div className="flex flex-col gap-5">
                 <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-link shrink-0">
+                  <div className="h-10 w-10 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-ink/70 dark:text-ink/60 shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
@@ -102,7 +97,7 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-link shrink-0">
+                  <div className="h-10 w-10 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-ink/70 dark:text-ink/60 shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
@@ -119,7 +114,7 @@ export function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-link shrink-0">
+                  <div className="h-10 w-10 rounded-lg bg-canvas-elevated border border-hairline flex items-center justify-center text-ink/70 dark:text-ink/60 shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
@@ -138,8 +133,15 @@ export function Contact() {
             </div>
 
             {/* Embedded Google Maps Container */}
-            <MagicCard className="p-3 flex flex-col gap-3 overflow-hidden">
-              <div className="relative w-full h-[220px] rounded-lg overflow-hidden border border-hairline-soft">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="rounded-xl overflow-hidden border border-hairline shadow-md"
+            >
+              {/* Map iframe — always full color */}
+              <div className="relative w-full h-[260px] overflow-hidden">
                 <iframe
                   title="SEVIORA PHARMA PRIVATE LIMITED Google Maps Location"
                   src={BUSINESS_INFO.googleMapsEmbedUrl}
@@ -149,24 +151,36 @@ export function Contact() {
                   allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full grayscale opacity-85 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300"
+                  className="w-full h-full"
                 />
+                {/* Pulsing pin overlay */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full pointer-events-none">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center justify-between px-1">
-                <span className="text-xs text-mute font-mono truncate max-w-[200px]">
-                  Ashiyana, Lucknow
-                </span>
+
+              {/* Footer bar with location label + open button */}
+              <div className="flex items-center justify-between px-4 py-3 bg-canvas-elevated border-t border-hairline">
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-ink/60 shrink-0" />
+                  <span className="text-xs font-mono text-body truncate max-w-[160px]">
+                    Ashiyana, Lucknow
+                  </span>
+                </div>
                 <a
                   href={BUSINESS_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-link md:hover:underline font-medium"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-ink text-canvas md:hover:bg-ink/80 transition-colors shrink-0"
                 >
-                  <span>Open in Google Maps</span>
+                  <span>Open in Maps</span>
                   <Send className="h-3 w-3" />
                 </a>
               </div>
-            </MagicCard>
+            </motion.div>
           </motion.div>
 
           {/* Right Column: Interactive Contact Form */}

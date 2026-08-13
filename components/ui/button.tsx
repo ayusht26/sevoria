@@ -10,13 +10,13 @@ const buttonVariants = cva(
       variant: {
         // Marketing CTAs (§2.4)
         primaryPill:
-          "bg-white text-black md:hover:bg-[#f0f0f0] rounded-full button-lg shadow-sm md:hover:scale-[1.02]",
+          "bg-ink text-canvas dark:bg-ink dark:text-canvas md:hover:bg-ink/80 dark:md:hover:bg-ink/70 rounded-full button-lg shadow-sm md:hover:scale-[1.02]",
         secondaryPill:
-          "bg-transparent border border-hairline text-ink md:hover:bg-hairline-soft rounded-full button-lg",
+          "bg-transparent border border-hairline text-ink md:hover:bg-canvas-elevated md:hover:border-mute rounded-full button-lg",
         
         // Nav & App buttons (§2.4)
         default:
-          "bg-white text-black md:hover:bg-[#f0f0f0] rounded-md button-md",
+          "bg-ink text-canvas dark:bg-ink dark:text-canvas md:hover:bg-ink/80 rounded-md button-md",
         outline:
           "border border-hairline bg-transparent text-ink md:hover:bg-canvas-elevated md:hover:border-mute rounded-md button-md",
         ghost:

@@ -46,7 +46,7 @@ const InteractiveHoverButton = React.forwardRef<
         <div
           className={cn(
             "absolute top-0 left-0 z-20 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover/ihb:translate-x-0 group-hover/ihb:opacity-100 whitespace-nowrap px-4",
-            isPrimary ? "text-white" : "text-black"
+            isPrimary ? "text-canvas" : "text-ink"
           )}
         >
           <span>{contentText}</span>
@@ -57,7 +57,7 @@ const InteractiveHoverButton = React.forwardRef<
         <div
           className={cn(
             "absolute left-[20%] top-[40%] h-2 w-2 scale-0 opacity-0 rounded-full transition-all duration-300 group-hover/ihb:left-0 group-hover/ihb:top-0 group-hover/ihb:h-full group-hover/ihb:w-full group-hover/ihb:scale-[1.8] group-hover/ihb:opacity-100 pointer-events-none z-0",
-            isPrimary ? "bg-black" : "bg-white"
+            isPrimary ? "bg-ink" : "bg-canvas-elevated-2"
           )}
         />
       </>
@@ -66,8 +66,8 @@ const InteractiveHoverButton = React.forwardRef<
     const baseClassName = cn(
       "group/ihb relative inline-flex items-center justify-center min-w-32 cursor-pointer overflow-hidden rounded-full px-6 py-2.5 text-center font-semibold transition-all duration-300",
       isPrimary
-        ? "bg-white text-black border border-white shadow-sm"
-        : "bg-white/[0.04] text-ink border border-white/25 hover:border-white/60 backdrop-blur-sm shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]",
+        ? "bg-ink text-canvas border border-ink shadow-sm"
+        : "bg-canvas-elevated text-ink border border-hairline hover:border-mute",
       className
     );
 
