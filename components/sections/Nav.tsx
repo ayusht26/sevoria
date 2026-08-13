@@ -45,7 +45,7 @@ export function Nav() {
       } else {
         window.location.href = href
       }
-    }, 320)
+    }, 410)
   }
 
   return (

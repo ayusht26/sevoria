@@ -14,14 +14,26 @@ const SheetPortal = SheetPrimitive.Portal
 const SheetOverlay = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+>(({ className, onAnimationEnd, onTransitionEnd, ...props }, ref) => (
   <SheetPrimitive.Overlay
+    ref={ref}
+    onAnimationEnd={(e) => {
+      if (e.target !== e.currentTarget) {
+        e.stopPropagation()
+      }
+      onAnimationEnd?.(e)
+    }}
+    onTransitionEnd={(e) => {
+      if (e.target !== e.currentTarget) {
+        e.stopPropagation()
+      }
+      onTransitionEnd?.(e)
+    }}
     className={cn(
-      "fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 duration-300 ease-in-out",
+      "fixed inset-0 z-50 bg-black/60 sheet-overlay-animated",
       className
     )}
     {...props}
-    ref={ref}
   />
 ))
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
@@ -29,19 +41,31 @@ SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, onAnimationEnd, onTransitionEnd, ...props }, ref) => (
   <SheetPortal>
     <SheetOverlay />
     <SheetPrimitive.Content
       ref={ref}
+      onAnimationEnd={(e) => {
+        if (e.target !== e.currentTarget) {
+          e.stopPropagation()
+        }
+        onAnimationEnd?.(e)
+      }}
+      onTransitionEnd={(e) => {
+        if (e.target !== e.currentTarget) {
+          e.stopPropagation()
+        }
+        onTransitionEnd?.(e)
+      }}
       className={cn(
-        "fixed inset-y-0 right-0 z-50 h-full w-3/4 max-w-sm border-l border-hairline bg-canvas p-6 shadow-2xl data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right duration-300 ease-in-out text-ink flex flex-col justify-between",
+        "fixed inset-y-0 right-0 z-50 h-full w-3/4 max-w-sm border-l border-hairline bg-canvas p-6 shadow-2xl sheet-content-animated text-ink flex flex-col justify-between transform-gpu",
         className
       )}
       {...props}
     >
       {children}
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-md opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-link focus:ring-offset-2 disabled:pointer-events-none p-2 text-ink">
+      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-md opacity-70 hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-link focus:ring-offset-2 disabled:pointer-events-none p-2 text-ink">
         <X className="h-6 w-6" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
